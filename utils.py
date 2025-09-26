@@ -31,7 +31,7 @@ def qa_agent(deepseek_api_key, memory, uploaded_file, question):
 
     # embedding模型
     embeddings_model = HuggingFaceBgeEmbeddings(
-        model_name="BAAI/bge-m3"
+        model_name="BAAI/bge-small-en"
     )
 
     # 向量数据库,检索器
@@ -49,5 +49,6 @@ def qa_agent(deepseek_api_key, memory, uploaded_file, question):
     response = qa.invoke({"chat_history":memory, "question": question})
 
     return response
+
 
 
